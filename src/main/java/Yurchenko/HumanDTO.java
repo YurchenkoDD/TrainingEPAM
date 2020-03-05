@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 public class HumanDTO {
     private Integer id;
     private String name;
-    private Address address;
     private Date birthDate;
+    private Address address;
 
     @Data
-    class Address {
+    public class Address {
         private String city;
         private String street;
         private Integer houseNumber;
