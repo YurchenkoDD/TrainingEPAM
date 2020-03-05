@@ -1,7 +1,7 @@
 package Yurchenko;
 
 public class Converter<P> {
-    Human.Address ConvertAddressToEntity(HumanDTO.Address dtoAdd) {
+    private Human.Address ConvertAddressToEntity(HumanDTO.Address dtoAdd) {
         Human human = new Human();
         Human.Address address = human.new Address();
         address.setStreet(dtoAdd.getStreet());
@@ -10,7 +10,7 @@ public class Converter<P> {
         return address;
     }
 
-    HumanDTO.Address ConvertAddressToDTO(Human.Address add) {
+    private HumanDTO.Address ConvertAddressToDTO(Human.Address add) {
         HumanDTO humanDTO = new HumanDTO();
         HumanDTO.Address address = humanDTO.new Address();
         address.setStreet(add.getStreet());
@@ -19,7 +19,7 @@ public class Converter<P> {
         return address;
     }
 
-    Human ConvertToEntity(HumanDTO dto) {
+    public Human ConvertToEntity(HumanDTO dto) {
         Human Human = new Human();
         Human.setId(dto.getId());
         Human.setName(dto.getName());
@@ -28,11 +28,11 @@ public class Converter<P> {
         return Human;
     }
 
-    HumanDTO ConvertToDTO(Human Human) {
+    public HumanDTO ConvertToDTO(Human Human) {
         HumanDTO DTO = new HumanDTO();
         DTO.setId(Human.getId());
         DTO.setName(Human.getName());
-        DTO.setBirthDate(DTO.getBirthDate());
+        DTO.setBirthDate(Human.getBirthDate());
         DTO.setAddress(ConvertAddressToDTO(Human.getAddress()));
         return DTO;
     }
