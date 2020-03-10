@@ -1,6 +1,12 @@
 package Yurchenko;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Converter<P> {
+
+    private  static final Logger logger = LoggerFactory.getLogger(Converter.class);
+
     private Human.Address ConvertAddressToEntity(HumanDTO.Address dtoAdd) {
         Human human = new Human();
         Human.Address address = human.new Address();
@@ -20,6 +26,7 @@ public class Converter<P> {
     }
 
     public Human ConvertToEntity(HumanDTO dto) {
+        logger.info("Конвертируем в сущность");
         Human Human = new Human();
         Human.setId(dto.getId());
         Human.setName(dto.getName());
