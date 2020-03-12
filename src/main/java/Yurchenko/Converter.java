@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class Converter<P> {
 
-    private  static final Logger logger = LoggerFactory.getLogger(Converter.class);
+    private Logger fileAndConsoleLogger = LoggerFactory.getLogger(Converter.class);
 
     private Human.Address ConvertAddressToEntity(HumanDTO.Address dtoAdd) {
         Human human = new Human();
@@ -26,12 +26,12 @@ public class Converter<P> {
     }
 
     public Human ConvertToEntity(HumanDTO dto) {
-        logger.info("Конвертируем в сущность");
         Human Human = new Human();
         Human.setId(dto.getId());
         Human.setName(dto.getName());
         Human.setBirthDate(dto.getBirthDate());
         Human.setAddress(ConvertAddressToEntity(dto.getAddress()));
+        fileAndConsoleLogger.info("Конвертация из DTO в сущность");
         return Human;
     }
 
@@ -41,6 +41,7 @@ public class Converter<P> {
         DTO.setName(Human.getName());
         DTO.setBirthDate(Human.getBirthDate());
         DTO.setAddress(ConvertAddressToDTO(Human.getAddress()));
+        fileAndConsoleLogger.info("Конвертация из сущности в DTO");
         return DTO;
     }
 }
