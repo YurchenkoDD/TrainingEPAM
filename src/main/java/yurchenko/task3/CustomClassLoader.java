@@ -1,6 +1,7 @@
 package yurchenko.task3;
 
 import lombok.extern.slf4j.Slf4j;
+
 import java.io.*;
 
 @Slf4j
@@ -8,11 +9,18 @@ public class CustomClassLoader extends ClassLoader {
 
     private String pathToBin;
 
-    public CustomClassLoader(String path){
+    public CustomClassLoader(String path) {
         super();
         pathToBin = path;
     }
 
+    /**
+     * Get bytecode from file and load class
+     *
+     * @param className - name of class
+     * @return loaded class or error
+     * @throws ClassNotFoundException when class missing
+     */
     @Override
     public Class<?> findClass(String className) throws ClassNotFoundException {
         try {

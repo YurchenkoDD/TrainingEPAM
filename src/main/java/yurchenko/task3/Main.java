@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Main {
     public static void main(String[] args) {
-        // Путь указан для систем на базе Unix
+        // Path specified for Unix based systems
         CustomClassLoader classLoader = new CustomClassLoader("/home/dd/workflowLocal/");
         Class<?> clazz;
         try {
