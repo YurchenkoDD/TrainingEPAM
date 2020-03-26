@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class HumanDTO {
+public class HumanDto {
     private Integer id;
     private String name;
     private Date birthDate;
