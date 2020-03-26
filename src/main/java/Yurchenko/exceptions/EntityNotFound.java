@@ -1,8 +1,10 @@
 package Yurchenko.exceptions;
 
-//checked exception
+/**
+ * Checked exception
+ */
 public class EntityNotFound extends Exception {
-    public EntityNotFound(String message){
+    public EntityNotFound(String message) {
         super(message);
     }
 }

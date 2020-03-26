@@ -1,17 +1,15 @@
 package Yurchenko;
 
 import Yurchenko.exceptions.EntityNotFound;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class Application {
-    public static void main(String[] args) throws EntityNotFound {
+    public static void main(String[] args){
         Service ser = new Service();
-        HumanDTO alldto = new HumanDTO();
+        HumanDto alldto = new HumanDto();
         ser.get(alldto);
-        List<HumanDTO> humanDTOS = ser.getAll(5);
+        List<HumanDto> humanDTOS = ser.getAll(5);
         ser.saveAll(humanDTOS);
         System.out.println("Test");
     }
