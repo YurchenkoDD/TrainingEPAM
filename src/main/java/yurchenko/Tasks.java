@@ -70,8 +70,8 @@ public class Tasks {
         }
         for (Map.Entry<Human, Integer> entry : mapHumans.entrySet()) {
             if (entry.getValue() > 1) {
-                Human h = entry.getKey();
-                humansList.remove(h);
+                Human human = entry.getKey();
+                humansList.remove(human);
             }
         }
         System.out.println("---------------------------------------");
@@ -164,9 +164,8 @@ public class Tasks {
 
     }
 
-    public void randLinkList() {
+    public void randomLinkList() {
         List<Integer> list = new LinkedList<>();
-        Random rnd = new Random();
         for (int i = 0; i < 10; i++) {
             list.add((int) (Math.random() * 100));
         }

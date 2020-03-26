@@ -15,14 +15,14 @@ public class Address implements Comparable<Address>  {
     private int flat;
 
     @Override
-    public int compareTo(Address o) {
-        int diff = city.compareTo(o.city);
+    public int compareTo(Address address) {
+        int diff = city.compareTo(address.city);
         if(diff == 0){
-            diff = street.compareTo(o.street);
+            diff = street.compareTo(address.street);
             if(diff==0){
-                diff = house - o.house;
+                diff = house - address.house;
                 if(diff==0){
-                    return flat - o.flat;
+                    return flat - address.flat;
                 }
                 return diff;
             }

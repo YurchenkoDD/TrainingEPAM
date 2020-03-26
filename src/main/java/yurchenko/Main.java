@@ -18,6 +18,6 @@ public class Main {
         task.greetUsers(users);
         task.sortByKey(footballers);
         task.sortByValue(footballers);
-        task.randLinkList();
+        task.randomLinkList();
     }
 }
