@@ -9,9 +9,9 @@ public class Main {
         DomParser domParser = new DomParser();
         XsdToXml convert = new XsdToXml();
         ModifyCatalog modify = new ModifyCatalog();
-        convert.createXML(3);
+        convert.createXml(3);
         domParser.parseByDom();
-        staxParser.StAXParser();
+        staxParser.StaxParser();
         System.out.println(XmlValidator.validateXml("src/main/resources/book.xsd", "book.xml"));
         modify.modify("plant_catalog.xml");
     }

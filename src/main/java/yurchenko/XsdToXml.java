@@ -15,7 +15,7 @@ import java.io.File;
 
 
 public class XsdToXml {
-    public void createXML(int number) {
+    public void createXml(int number) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -32,6 +32,12 @@ public class XsdToXml {
         }
     }
 
+    /**
+     * Create document
+     *
+     * @param document - name of document
+     * @param number   - number of books in document
+     */
     private Document createBooks(Document document, int number) {
         Element rootElement = document.createElementNS("", "Books");
         rootElement.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
@@ -48,6 +54,12 @@ public class XsdToXml {
         return document;
     }
 
+    /**
+     * Create author of book
+     *
+     * @param document - name of document
+     * @return author with fields
+     */
     private Node getAuthor(Document document) {
         Element author = document.createElement("author");
         author.appendChild(getField(document, "firstname", stringGen()));
@@ -56,6 +68,14 @@ public class XsdToXml {
         return author;
     }
 
+    /**
+     * Fill document
+     *
+     * @param document - name of document
+     * @param field    - document's fields
+     * @param value    - field's value
+     * @return document's field
+     */
     private Node getField(Document document, String field, String value) {
         Element node = document.createElement(field);
         node.appendChild(document.createTextNode(value));
