@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class ComparatorAdress implements Comparator<Human> {
     @Override
-    public int compare(Human o1, Human o2) {
-        return o1.getAddress().compareTo(o2.getAddress());
+    public int compare(Human address1, Human address2) {
+        return address1.getAddress().compareTo(address2.getAddress());
     }
 }
