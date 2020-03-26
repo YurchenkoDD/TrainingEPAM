@@ -3,34 +3,48 @@ package Yurchenko;
 import java.util.List;
 import java.util.ArrayList;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Service for working with dto
+ */
 public class Service {
 
-    public HumanDTO get(HumanDTO dto) {
+    /**
+     * Get dto from DB
+     *
+     * @param dto from user
+     * @return filled dto
+     */
+    public HumanDto get(HumanDto dto) {
         Converter converter = new Converter();
         Repository repository = new Repository();
         Human human = converter.ConvertToEntity(dto);
         repository.get(human);
-        dto = converter.ConvertToDTO(human);
+        dto = converter.ConvertToDto(human);
         return dto;
     }
 
-    public List<HumanDTO> getAll(int i) {
-        List<HumanDTO> list = new ArrayList<>();
+    /**
+     * Get all dto from DB
+     *
+     * @param i number of users
+     * @return list of dto
+     */
+    public List<HumanDto> getAll(int i) {
+        List<HumanDto> list = new ArrayList<>();
         for (int j = 0; j < i; j++) {
-            HumanDTO dto = new HumanDTO();
+            HumanDto dto = new HumanDto();
             list.add(get(dto));
         }
         return list;
     }
 
-    public void saveAll(List<HumanDTO> alldto) {
-        for (HumanDTO dto : alldto) {
+    /**
+     * Save dto in DB
+     *
+     * @param dtoList of dto
+     */
+    public void saveAll(List<HumanDto> dtoList) {
+        for (HumanDto dto : dtoList) {
             Converter converter = new Converter();
             Repository repository = new Repository();
             Human human = converter.ConvertToEntity(dto);

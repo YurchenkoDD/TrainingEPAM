@@ -5,10 +5,10 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         Service ser = new Service();
-        HumanDTO alldto = new HumanDTO();
-        ser.get(alldto);
-        List<HumanDTO> humanDTOS = ser.getAll(5);
-        ser.saveAll(humanDTOS);
+        HumanDto allDto = new HumanDto();
+        ser.get(allDto);
+        List<HumanDto> humanDtos = ser.getAll(5);
+        ser.saveAll(humanDtos);
         System.out.println("Test");
     }
 }
