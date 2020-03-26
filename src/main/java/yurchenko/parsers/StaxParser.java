@@ -9,7 +9,7 @@ import java.io.FileReader;
 
 @Slf4j
 public class StaxParser {
-    public void StAXParser() {
+    public void StaxParser() {
         try {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLStreamReader streamReader = factory.createXMLStreamReader(new FileReader("plant_catalog.xml"));

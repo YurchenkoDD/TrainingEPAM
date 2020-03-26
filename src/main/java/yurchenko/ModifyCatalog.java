@@ -42,6 +42,14 @@ public class ModifyCatalog {
         }
     }
 
+
+    /**
+     * Get a node through a plant's object
+     *
+     * @param document - name of document
+     * @param plant    - plant's object
+     * @return node
+     */
     private Node getPlant(Document document, Plant plant) {
         Element node = document.createElement("PLANT");
         node.appendChild(getField(document, "COMMON", plant.getCommon()));
@@ -79,6 +87,12 @@ public class ModifyCatalog {
         }
     }
 
+    /**
+     * Get values from a node
+     *
+     * @param node - input node
+     * @return plant's object
+     */
     private Plant getPlant(Node node) {
         Plant plant = new Plant();
         if (node.getNodeType() == Node.ELEMENT_NODE) {
