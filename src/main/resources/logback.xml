@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>template_method.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file1" class="ch.qos.logback.core.FileAppender">
+        <file>state.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file2" class="ch.qos.logback.core.FileAppender">
+        <file>decorator.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file3" class="ch.qos.logback.core.FileAppender">
+        <file>adapter.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="yurchenko.behavioral.template_method" level="debug" additivity="false">
+        <appender-ref ref="file"/>
+    </logger>
+    <logger name="yurchenko.behavioral.state" level="info" additivity="false">
+        <appender-ref ref="file1"/>
+    </logger>
+    <logger name="yurchenko.structural.decorator" level="info" additivity="false">
+        <appender-ref ref="file2"/>
+    </logger>
+    <logger name="yurchenko.structural.adapter" level="info" additivity="false">
+        <appender-ref ref="file3"/>
+    </logger>
+
+
+    <root level="error">
+        <appender-ref ref="file"/>
+    </root>
+</configuration>
