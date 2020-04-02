@@ -1,0 +1,10 @@
+age=11
+name=Andrei
+age=16
+name=Anton
+age=12
+name=Artem
+age=21
+name=Victor
+age=34
+name=German
