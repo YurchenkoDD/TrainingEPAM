@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>Racecondition.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file1" class="ch.qos.logback.core.FileAppender">
+        <file>Raceconditionsolution.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <appender name="file2" class="ch.qos.logback.core.FileAppender">
+        <file>Deadlock.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <appender name="file3" class="ch.qos.logback.core.FileAppender">
+        <file>Chat.log</file>
+        <append>false</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="yurchenko.racecondition.problem.Counter" level="debug" additivity="false">
+        <appender-ref ref="file"/>
+    </logger>
+
+    <logger name="yurchenko.racecondition.solution.Counter" level="debug" additivity="false">
+        <appender-ref ref="file1"/>
+    </logger>
+
+    <logger name="yurchenko.deadlock.solution.Service" level="debug" additivity="false">
+        <appender-ref ref="file2"/>
+    </logger>
+
+    <logger name="yurchenko.chat.chat.Chat" level="debug" additivity="false">
+        <appender-ref ref="file3"/>
+    </logger>
+
+
+    <root level="error">
+        <appender-ref ref="file"/>
+    </root>
+</configuration>
