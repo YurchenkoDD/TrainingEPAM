@@ -12,7 +12,7 @@ select * from products
 where price between 10 and 20
 
 select * from orders 
-where DATE(orderdate) >= '2004-01-05' and DATE(orderdate) <= '2004-02-05'
+where orderdate >= '2004-01-05'::date and orderdate <= '2004-02-05'::date
 
 select customerid, count(customerid) from orders
 group by customerid
