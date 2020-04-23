@@ -54,7 +54,7 @@ public class Service {
         }
     }
 
-    public void delete(int productId) {
+    public static void delete(int productId) {
         try {
             preparedStatement = connection.prepareStatement("DELETE FROM products WHERE prod_id = ?;");
             preparedStatement.setInt(1, productId);
@@ -81,7 +81,7 @@ public class Service {
         }
     }
 
-    public void disconnect() {
+    public static void disconnect() {
         try {
             if (resultSet != null) {
                 resultSet.close();
