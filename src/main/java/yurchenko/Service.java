@@ -16,7 +16,7 @@ public class Service {
     private static ResultSet resultSet;
     private static PreparedStatement preparedStatement;
 
-    public void connect() {
+    public static void connect() {
         try {
             connection = DriverManager.getConnection(DB_URL,
                     DB_USER, DB_PASSWORD);
